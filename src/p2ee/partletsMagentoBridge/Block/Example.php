@@ -11,6 +11,8 @@ class Example extends Mage_Core_Block_Abstract
 
 
     protected $_partlet;
+    
+    protected $_useFullNamespace = false;
 
     public function _construct()
     {
@@ -31,6 +33,11 @@ class Example extends Mage_Core_Block_Abstract
     {
         return $this->_partlet;
     }
+    
+    public function setUseFullNamespace( $bool )
+    {
+        $this->_useFullNamespace = $bool;
+    }
 
     /**
      * Render block HTML
@@ -42,7 +49,7 @@ class Example extends Mage_Core_Block_Abstract
 
         $silexApp = Mage::registry('silex_partlets');
         //return "<pre>haw haw</pre>";
-        $partletObject = $silexApp['partlet']->get($this->getPartlet());
+        $partletObject = $silexApp['partlet']->get($this->getPartlet(),$this->_useFullNamespace);
         /*
                 Fatal error: Class 'p2ee\partletsMagentoBridge\PartletService' not found in 
             /srv/magento_common/.modman/partletsMagentoBridge/src/p2ee/partletsMagentoBridge/SilexProvider/PartletServiceProvider.php on line 20
