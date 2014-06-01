@@ -1,0 +1,31 @@
+{
+    "name": "p2ee/partletsMagentoBrdige",
+    "description": "Magento bridge package for the partlet hmvc system",
+    "require-dev": {
+        "phpunit/phpunit": "4.1.*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daniel Fahlke aka Flyingmana",
+            "email": "flyingmana@googlemail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.5.0",
+        "p2ee/preparables": "dev-master",
+        "p2ee/partlets": "dev-master",
+        "silex/silex": "~1.1",
+        "twig/twig": "~1.8",
+        "rg/injektor": ">=1.2.0,<2.0.0-dev"
+    },
+    "autoload": {
+        "psr-0": {
+            "p2ee\\": "src/"
+        }
+    },
+    "config": {
+        "bin-dir": "vendor/bin/"
+    }
+}
